@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Spring Boot: Project coordinates and parent configuration -->
+    <!-- Defines the project structure and inherits Spring Boot defaults -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.0</version>
+        <relativePath/> <!-- Spring Boot: Lookup parent from repository -->
+    </parent>
+
+    <!-- Spring Boot: Project identification for investment management system -->
+    <!-- Unique identifier for the investment proposal management application -->
+    <groupId>com.investment</groupId>
+    <artifactId>investment-proposal-management</artifactId>
+    <version>1.0.0</version>
+    <name>investment-proposal-management</name>
+    <description>Investment Proposal Management System using Spring Boot</description>
+
+    <!-- Spring Boot: Java version specification for investment application -->
+    <!-- Ensures compatibility with modern Java features for investment processing -->
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+
+    <!-- Spring Boot: Dependencies for investment management system -->
+    <!-- Core dependencies that enable investment proposal management functionality -->
+    <dependencies>
+
+        <!-- Spring Boot: Web starter for investment REST API and MVC -->
+        <!-- Provides embedded Tomcat server and web framework for investment services -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Spring Boot: Data JPA starter for investment database operations -->
+        <!-- Enables investment proposal persistence with Hibernate ORM -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!-- Spring Boot: Security starter for investment system protection -->
+        <!-- Provides authentication and authorization for investment management -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!-- Spring Boot: Validation starter for investment data validation -->
+        <!-- Enables investment proposal data validation with Bean Validation -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <!-- Spring Boot: Cache starter for investment performance optimization -->
+        <!-- Provides caching capabilities for investment portfolio analysis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+
+        <!-- Spring Boot: Actuator starter for investment system monitoring -->
+        <!-- Enables investment system health checks and operational metrics -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!-- Spring Boot: Thymeleaf starter for investment web templates -->
+        <!-- Provides server-side rendering for investment management UI -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <!-- Spring Boot: H2 Database for investment development and testing -->
+        <!-- Embedded database for investment proposal storage during development -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Spring Boot: Configuration Processor for investment configuration metadata -->
+        <!-- Generates metadata for investment configuration properties -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Spring Boot: Test starter for investment system testing -->
+        <!-- Provides testing framework and utilities for investment services -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Spring Boot: Security test utilities for investment security testing -->
+        <!-- Provides testing support for investment security configurations -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- Spring Boot: Build configuration for investment management system -->
+    <!-- Defines how the investment application should be built and packaged -->
+    <build>
+        <plugins>
+            <!-- Spring Boot: Maven plugin for investment application packaging -->
+            <!-- Creates executable JAR with embedded dependencies for investment system -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!-- Spring Boot: Main class specification for investment application -->
+                    <!-- Explicitly defines the main class for investment system startup -->
+                    <mainClass>com.investment.proposal.InvestmentProposalApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Spring Boot: HTML head section for investment proposals management interface -->
+    <!-- Provides metadata and styling for investment portfolio management -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Investment Proposals</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<!-- Spring Boot: Main container for investment proposals management interface -->
+<!-- Provides layout structure for investment portfolio management web interface -->
+<div class="container">
+    <!-- Spring Boot: Header section for investment proposals management -->
+    <!-- Displays investment portfolio management title and information -->
+    <header>
+        <h1 th:text="${title}">Investment Proposals</h1>
+        <p th:text="${description}">View and manage investment proposals</p>
+    </header>
+
+    <!-- Spring Boot: Navigation section for investment proposals management -->
+    <!-- Provides links to different investment management sections -->
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/proposals">Investment Proposals</a></li>
+            <li><a href="/h2-console" target="_blank">Database Console</a></li>
+            <li><a href="/actuator" target="_blank">System Monitoring</a></li>
+        </ul>
+    </nav>
+
+    <!-- Spring Boot: Main content section for investment proposals management -->
+    <!-- Displays investment portfolio data and management controls -->
+    <main>
+        <section class="proposal-actions">
+            <h2>Investment Proposal Actions</h2>
+            <div class="action-buttons">
+                <button onclick="createNewProposal()">Create New Proposal</button>
+                <button onclick="refreshProposals()">Refresh Proposals</button>
+                <button onclick="exportProposals()">Export Proposals</button>
+            </div>
+        </section>
+
+        <section class="proposal-list">
+            <h2>Current Investment Proposals</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Reference</th>
+                        <th>Client Name</th>
+                        <th>Amount</th>
+                        <th>Expected Return</th>
+                        <th>Risk Level</th>
+                        <th>Investment Type</th>
+                        <th>Advisor</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>INV-001</td>
+                        <td>John Doe</td>
+                        <td>$50,000.00</td>
+                        <td>7.5%</td>
+                        <td>MEDIUM</td>
+                        <td>STOCKS</td>
+                        <td>Alice Johnson</td>
+                        <td><span class="status pending">Pending</span></td>
+                        <td>
+                            <button class="btn-small">View</button>
+                            <button class="btn-small">Edit</button>
+                            <button class="btn-small btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>INV-002</td>
+                        <td>Jane Smith</td>
+                        <td>$100,000.00</td>
+                        <td>12.0%</td>
+                        <td>HIGH</td>
+                        <td>REAL_ESTATE</td>
+                        <td>Carol Davis</td>
+                        <td><span class="status approved">Approved</span></td>
+                        <td>
+                            <button class="btn-small">View</button>
+                            <button class="btn-small">Edit</button>
+                            <button class="btn-small btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>INV-003</td>
+                        <td>Bob Johnson</td>
+                        <td>$25,000.00</td>
+                        <td>5.8%</td>
+                        <td>LOW</td>
+                        <td>BONDS</td>
+                        <td>Bob Smith</td>
+                        <td><span class="status pending">Pending</span></td>
+                        <td>
+                            <button class="btn-small">View</button>
+                            <button class="btn-small">Edit</button>
+                            <button class="btn-small btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="portfolio-summary">
+            <h2>Portfolio Summary</h2>
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <h3>Total Proposals</h3>
+                    <p class="summary-value">15</p>
+                </div>
+                <div class="summary-card">
+                    <h3>Total Investment</h3>
+                    <p class="summary-value">$1,250,000.00</p>
+                </div>
+                <div class="summary-card">
+                    <h3>Average Return</h3>
+                    <p class="summary-value">8.7%</p>
+                </div>
+                <div class="summary-card">
+                    <h3>Approval Rate</h3>
+                    <p class="summary-value">67%</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Spring Boot: Footer section for investment proposals management -->
+    <!-- Displays investment portfolio management information and copyright details -->
+    <footer>
+        <p>&copy; 2024 Investment Proposal Management System. All rights reserved.</p>
+    </footer>
+</div>
+
+<!-- Spring Boot: JavaScript section for investment proposals management -->
+<!-- Provides client-side functionality for investment portfolio management -->
+<script>
+    // Spring Boot: Function for creating new investment proposal
+    // Provides client-side investment proposal creation workflow
+    function createNewProposal() {
+        alert('Create new investment proposal functionality would be implemented here');
+    }
+
+    // Spring Boot: Function for refreshing investment proposals
+    // Provides client-side investment portfolio data refresh capability
+    function refreshProposals() {
+        location.reload();
+    }
+
+    // Spring Boot: Function for exporting investment proposals
+    // Provides client-side investment portfolio data export capability
+    function exportProposals() {
+        alert('Export investment proposals functionality would be implemented here');
+    }
+</script>
+</body>
+</html>

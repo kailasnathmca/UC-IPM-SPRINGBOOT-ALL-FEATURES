@@ -1,0 +1,73 @@
+# Spring Boot: Main application configuration for investment management system
+# Centralized configuration for investment proposal management application
+server:
+  # Spring Boot: Server configuration for investment web application
+  # Defines HTTP port and context path for investment services
+  port: 8080  # Spring Boot: HTTP port for investment management system
+  servlet:
+    context-path: /investment  # Spring Boot: Base URL path for investment services
+
+# Spring Boot: Application name for investment management system
+# Used for logging, monitoring, and service identification
+spring:
+  application:
+    name: investment-proposal-management  # Spring Boot: Investment system name
+
+  # Spring Boot: H2 Database configuration for investment development
+  # Embedded database setup for investment proposal storage during development
+  datasource:
+    url: jdbc:h2:mem:investmentdb  # Spring Boot: In-memory H2 database for investment data
+    driver-class-name: org.h2.Driver  # Spring Boot: H2 database driver
+    username: sa  # Spring Boot: Database username for investment system
+    password:  # Spring Boot: Database password (empty for development)
+
+  # Spring Boot: JPA/Hibernate configuration for investment data access
+  # ORM settings for investment proposal persistence and management
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect  # Spring Boot: H2 database dialect
+    hibernate:
+      ddl-auto: create-drop  # Spring Boot: Auto-create/drop investment tables
+    show-sql: true  # Spring Boot: Show SQL statements for investment debugging
+    properties:
+      hibernate:
+        format_sql: true  # Spring Boot: Format SQL for investment readability
+
+  # Spring Boot: H2 Console configuration for investment database access
+  # Web-based database console for investment data inspection
+  h2:
+    console:
+      enabled: true  # Spring Boot: Enable H2 web console for investment development
+      path: /h2-console  # Spring Boot: URL path for investment database console
+
+  # Spring Boot: Cache configuration for investment performance optimization
+  # Caching settings for investment portfolio analysis and data retrieval
+  cache:
+    type: simple  # Spring Boot: Simple cache implementation for investment data
+
+  # Spring Boot: Security configuration for investment management system
+  # Authentication and authorization settings for investment services
+  security:
+    user:
+      name: admin  # Spring Boot: Default admin username for investment system
+      password: password  # Spring Boot: Default admin password for investment access
+      roles: ADMIN, INVESTMENT_MANAGER  # Spring Boot: Admin roles for investment management
+
+# Spring Boot: Custom investment management configuration properties
+# Application-specific settings for investment proposal management workflows
+investment:
+  management:
+    max-investment-amount: 10000000.00  # Spring Boot: Maximum investment limit
+    default-advisor-strategy: ROUND_ROBIN  # Spring Boot: Advisor assignment strategy
+    risk-assessment-service-url: http://localhost:8081/risk-assessment  # Spring Boot: Risk service URL
+    portfolio-review-cron: "0 0 9 * * MON"  # Spring Boot: Weekly portfolio review schedule
+
+# Spring Boot: Actuator configuration for investment system monitoring
+# Operational metrics and health endpoints for investment management
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  # Spring Boot: Expose all actuator endpoints for investment monitoring
+  endpoint:
+    health:
+      show-details: always  # Spring Boot: Detailed health information for investment system

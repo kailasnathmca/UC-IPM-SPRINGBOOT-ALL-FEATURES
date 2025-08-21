@@ -1,0 +1,31 @@
+# Spring Boot: Development profile configuration for investment system
+# Environment-specific settings for investment development and testing
+spring:
+  config:
+    activate:
+      on-profile: dev  # Spring Boot: Activate this configuration for development profile
+
+  # Spring Boot: Development database configuration for investment testing
+  # Enhanced logging and debugging for investment development workflows
+  datasource:
+    url: jdbc:h2:mem:dev_investmentdb  # Spring Boot: Development database instance
+    driver-class-name: org.h2.Driver  # Spring Boot: H2 driver for development
+    username: dev_user  # Spring Boot: Development database user
+    password: dev_password  # Spring Boot: Development database password
+
+  # Spring Boot: Development JPA settings for investment debugging
+  # Verbose logging for investment data access during development
+  jpa:
+    show-sql: true  # Spring Boot: Show SQL for investment development debugging
+    properties:
+      hibernate:
+        format_sql: true  # Spring Boot: Format SQL for investment readability
+        use_sql_comments: true  # Spring Boot: Add comments to investment SQL
+
+# Spring Boot: Development logging configuration for investment system
+# Detailed logging for investment development and debugging
+logging:
+  level:
+    com.investment.proposal: DEBUG  # Spring Boot: Debug level for investment package
+    org.springframework: INFO  # Spring Boot: Info level for Spring framework
+    org.hibernate: DEBUG  # Spring Boot: Debug level for Hibernate investment operations

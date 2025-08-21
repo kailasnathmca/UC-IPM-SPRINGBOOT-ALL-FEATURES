@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Spring Boot: HTML head section for investment management web interface -->
+    <!-- Provides metadata and styling for investment management dashboard -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Investment Proposal Management System</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<!-- Spring Boot: Main container for investment management dashboard -->
+<!-- Provides layout structure for investment management web interface -->
+<div class="container">
+    <!-- Spring Boot: Header section for investment management dashboard -->
+    <!-- Displays investment system title and navigation information -->
+    <header>
+        <h1 th:text="${title}">Investment Proposal Management System</h1>
+        <p th:text="${description}">Manage investment proposals and portfolio analysis</p>
+    </header>
+
+    <!-- Spring Boot: Navigation section for investment management dashboard -->
+    <!-- Provides links to different investment management sections -->
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/proposals">Investment Proposals</a></li>
+            <li><a href="/h2-console" target="_blank">Database Console</a></li>
+            <li><a href="/actuator" target="_blank">System Monitoring</a></li>
+        </ul>
+    </nav>
+
+    <!-- Spring Boot: Main content section for investment management dashboard -->
+    <!-- Displays investment system features and functionality information -->
+    <main>
+        <section class="features">
+            <h2>Investment Management Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Proposal Management</h3>
+                    <p>Create, view, and manage investment proposals with comprehensive tracking.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Portfolio Analysis</h3>
+                    <p>Analyze investment portfolios by risk level, client, and investment type.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Risk Assessment</h3>
+                    <p>Evaluate investment risks with automated risk assessment workflows.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Client Management</h3>
+                    <p>Manage client relationships and investment portfolios efficiently.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="api-info">
+            <h2>REST API Endpoints</h2>
+            <div class="endpoint-list">
+                <div class="endpoint">
+                    <code>GET /api/investment-proposals</code>
+                    <span>Retrieve all investment proposals</span>
+                </div>
+                <div class="endpoint">
+                    <code>POST /api/investment-proposals</code>
+                    <span>Create new investment proposal</span>
+                </div>
+                <div class="endpoint">
+                    <code>GET /api/investment-proposals/{id}</code>
+                    <span>Get investment proposal by ID</span>
+                </div>
+                <div class="endpoint">
+                    <code>PUT /api/investment-proposals/{id}/approve</code>
+                    <span>Update investment proposal approval status</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Spring Boot: Footer section for investment management dashboard -->
+    <!-- Displays investment system information and copyright details -->
+    <footer>
+        <p>&copy; 2024 Investment Proposal Management System. All rights reserved.</p>
+    </footer>
+</div>
+</body>
+</html>
